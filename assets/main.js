@@ -2,9 +2,11 @@ let coin = {
   state: 0,
   flip: function () {
     let coinFlip = Math.random()
+
     if (coinFlip < .5) {
       this.state = 0
-    } else {
+    }
+    else {
       this.state = 1
     }
     /* 1. Randomly set your coin object's "state" property to be either 
@@ -13,10 +15,12 @@ let coin = {
   toString: function () {
     let string = document.createElement('div')
     document.body.append(string)
+
     if (this.state === 0) {
       string.append('Heads')
       return 'Heads'
-    } else if (this.state === 1) {
+    } 
+    else if (this.state === 1) {
       string.append('Tails')
       return 'Tails'
     }
@@ -24,12 +28,13 @@ let coin = {
        "this.state" is 0 or 1. */
   },
   toHTML: function () {
-   
     let image = document.createElement('img');
+
     if (this.state === 0) {
       document.body.append(image)
       image.src = './assets/Images/heads.png'
-    } else if (this.state === 1) {
+    } 
+    else if (this.state === 1) {
       document.body.append(image)
       image.src = './assets/Images/tails.png'
     }
@@ -44,7 +49,6 @@ let coin = {
     }
   },
   display20Images: function () {
-
     for (let index = 0; index < 20; index++) {
       this.flip()
       this.toHTML()
